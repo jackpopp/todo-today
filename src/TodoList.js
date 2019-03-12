@@ -77,9 +77,9 @@ export default function TodoList() {
 
     return <div>
         <header>
-            Time till reset: {timeLeft(time)}
+            Time till reset: <strong>{timeLeft(time)}</strong>
             <div className="right">
-                Total: {list.length}
+                Total: <strong>{list.length}</strong>
             </div>
         </header>
         
@@ -91,7 +91,9 @@ export default function TodoList() {
         {list.map((item) => (
             <li key={item.date}>
                 {item.text}
-                <span className="delete right" data-id={item.id} onClick={deleteItem}>Delete</span>
+                <strong>
+                    <span className="delete right" data-id={item.id} onClick={deleteItem}>Delete</span>
+                </strong>
             </li>    
         ))}
         </ul>
